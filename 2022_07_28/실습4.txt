@@ -1,0 +1,12 @@
+num = int(input("정수값을 입력하세요 : "))
+check = 0
+
+for root in range(1, num) :
+    for pwr in range(2, 6) :
+        if root ** pwr == num:
+            print(f"{root}, {pwr}")
+            check = 1
+            break
+
+if check == 0 :
+    print(f"결과가 없습니다")

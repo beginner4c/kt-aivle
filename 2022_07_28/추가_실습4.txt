@@ -1,0 +1,14 @@
+data = input("숫자로 이루어진 문자열을 입력하세요 : ")
+result = 0
+
+for i in range(0, len(data)) :
+    num = int(data[i])
+    if num <= 1 or result <= 1:
+        result += num
+        print(f"{num} + ", end = "")
+    else :
+        result *= num
+        print(f"{num} x ", end = "")
+
+print(f"= {result}")
+

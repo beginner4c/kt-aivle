@@ -1,0 +1,17 @@
+def check_max(a, b, c, d):
+    maximum = a
+    if b > maximum:
+        maximum = b
+    if c > maximum:
+        maximum = c
+    if d > maximum:
+        maximum = d
+    
+    return maximum
+
+a = input("a값 : ")
+b = input("b값 : ")
+c = input("c값 : ")
+d = input("d값 : ")
+
+print(f"최대값은 {check_max(a,b,c,d)}입니다")

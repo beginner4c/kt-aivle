@@ -1,0 +1,18 @@
+N = int(input("0보다 크고 99보다 작은 정수 입력 : "))
+
+check = N
+print(f"{check}")
+count = 0
+
+while True :
+
+    left = check // 10
+    right = check % 10
+    sum1 = left + right
+    check = (right * 10) + (sum1 % 10)
+    count += 1
+    
+    if check == N:
+        break
+
+print(f"사이클의 길이는 {count}입니다")

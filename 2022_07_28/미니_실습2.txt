@@ -1,0 +1,14 @@
+def waterPay(comp, water) :
+    if comp == 'A' :
+        return int(water) * 100
+    elif comp == 'B' :
+        if water <= 50 :
+            return int(water) * 150
+        elif water > 50 :
+            return int(water) * 75
+    else :
+        return -1
+company = input("회사를 입력하세요 : ")
+water = int(input("수도 사용량을 입력하세요 : "))
+
+print(f"수도 이용 요금은 {waterPay(company, water)}입니다")

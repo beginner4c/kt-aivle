@@ -1,0 +1,13 @@
+def solution(n):
+    answer = -1
+
+    for i in range (1, n) :
+        if i ** 2 == n :
+            i += 1
+            answer = i ** 2
+            return answer
+
+    return answer
+
+num = int(input("양의 정수를 입력하세요 : "))
+print(f"결과는 {solution(num)} 입니다")

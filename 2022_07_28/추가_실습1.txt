@@ -1,0 +1,16 @@
+num1 = int(input("첫 번째 정수 입력 : "))
+num2 = int(input("두 번째 정수 입력 : "))
+
+res1 = num1
+res2 = num2
+
+while True :
+    if res1 == res2 :
+        answer = res1
+        break
+    elif res1 > res2 :
+        res2 += num2
+    elif res2 > res1 :
+        res1 += num1
+
+print(f"최소공배수는 {answer}입니다")

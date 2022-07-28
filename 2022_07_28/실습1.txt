@@ -1,0 +1,15 @@
+def electricPay(usage) :
+    if usage < 100 :
+        price = usage * 60.7 + 410
+    elif usage <= 200 :
+        price = 100 * 60.7 + (100 - usage) * 125.9 + 910
+    elif usage > 200 :
+        price = 100 * 60.7 + 100 * 125.9 + (200 - usage) * 187.9 + 1600
+    
+    price += price * 0.1 + price * 0.037
+
+    return int(price)
+
+elt = int(input("전기 사용량을 입력하세요 : "))
+
+print(f"총 전기요금은 {electricPay(elt)}입니다.")
