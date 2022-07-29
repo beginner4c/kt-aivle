@@ -1,0 +1,12 @@
+Q. 2부터 1000사이 수 중에서 소수를 리스트에 입력하고 출력하여라
+
+x = []
+
+for i in range(2, 1001) :
+    for j in range(2, i+1) :
+        if i == j :
+            x.append(i)
+        elif i % j == 0 :
+            break
+
+print(x)

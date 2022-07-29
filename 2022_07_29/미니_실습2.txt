@@ -1,0 +1,20 @@
+Q) 리스트를 사용자로부터 입력받아서 역순으로 정렬하여 리스트의 원소를 출력하
+여라.
+
+def reverse_list(a) :
+    n = len(a)
+    for i in range(n // 2) :
+        a[i], a[n - i - 1] = a[n - i - 1], a[i]
+
+print("리스트를 역순으로 출력합니다.")
+num = int(input("원소 수를 입력하세요 : "))
+
+x = []
+
+for i in range(num) :
+    x.append(int(input(f"x[{i}]값을 입력하세요 : ")))
+
+reverse_list(x)
+
+for i in range(num) :
+    print(f"x[{i}] = {x[i]}")

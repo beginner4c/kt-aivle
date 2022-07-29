@@ -1,0 +1,50 @@
+Q1 (https://programmers.co.kr/learn/courses/30/lessons/77484)
+### 로또 6/45(이하 '로또'로 표기)는 1부터 45까지의 숫자 중 6개를 찍어서 맞히는 대표적인 복권입니다. 아래는 로또의 순위를 정하는 방식입니다. 
+### 민우가 구매한 로또 번호를 담은 배열 lottos, 당첨 번호를 담은 배열 win_nums가 매개변수로 주어집니다. 이때, 당첨 가능한 최고 순위와 최저 순위를 차례대로 배열에 담아서 return 하도록 solution 함수를 완성해주세요.
+
+### 제한사항
+- lottos는 길이 6인 정수 배열입니다.
+- lottos의 모든 원소는 0 이상 45 이하인 정수입니다.
+- 0은 알아볼 수 없는 숫자를 의미합니다.
+- 0을 제외한 다른 숫자들은 lottos에 2개 이상 담겨있지 않습니다.
+- lottos의 원소들은 정렬되어 있지 않을 수도 있습니다.
+- win_nums은 길이 6인 정수 배열입니다.
+- win_nums의 모든 원소는 1 이상 45 이하인 정수입니다.
+- win_nums에는 같은 숫자가 2개 이상 담겨있지 않습니다.
+- win_nums의 원소들은 정렬되어 있지 않을 수도 있습니다.
+
+
+def solution(lottos, win_nums) :
+    answer = []
+    count = 0
+    win_count = lottos.count(0)
+
+    for i in lottos :
+        if i in win_nums :
+            count += 1
+    
+    answer.append(count + win_count)
+    answer.append(count)
+
+    for i in range(0, len(answer)) :
+        if answer[i] == 6 :
+            answer[i] = 1
+        elif answer[i] == 5 :
+            answer[i] = 2
+        elif answer[i] == 4:
+            answer[i] = 3
+        elif answer[i] == 3:
+            answer[i] = 4
+        elif answer[i] == 2:
+            answer[i] = 5
+        else :
+            answer[i] = 6
+
+    return answer
+
+lottos = [44, 1, 0, 0, 31, 25]
+win_nums = [31, 10, 45, 1, 6, 19]
+
+answer = solution(lottos, win_nums)
+
+print(answer)
